@@ -251,7 +251,7 @@ function ProductCard({ producto, stock, onEdit }) {
       </div>
       <div className="details">
         <span>Mín {producto.stockMinimo || 0}</span>
-        <span>Real {producto.stockObjetivo || 0}</span>
+        <span>Obj {producto.stockObjetivo || 0}</span>
         <span>{money(producto.precioNeto)}</span>
         <span>{producto.proveedor}</span>
       </div>
@@ -294,7 +294,7 @@ function ProductEditor({ producto, onClose }) {
           <label>Unidad<input value={form.unidad || ""} onChange={(e) => setField("unidad", e.target.value)} /></label>
           <label>Stock inicial<input type="number" value={form.stockInicial || 0} onChange={(e) => setField("stockInicial", e.target.value)} /></label>
           <label>Stock mínimo<input type="number" value={form.stockMinimo || 0} onChange={(e) => setField("stockMinimo", e.target.value)} /></label>
-          <label>Stock real<input type="number" value={form.stockObjetivo || 0} onChange={(e) => setField("stockObjetivo", e.target.value)} /></label>
+          <label>Stock objetivo<input type="number" value={form.stockObjetivo || 0} onChange={(e) => setField("stockObjetivo", e.target.value)} /></label>
           <label>Precio neto<input type="number" value={form.precioNeto || 0} onChange={(e) => setField("precioNeto", e.target.value)} /></label>
           <label className="full">Observaciones<input value={form.observaciones || ""} onChange={(e) => setField("observaciones", e.target.value)} /></label>
         </div>
@@ -415,7 +415,7 @@ function Reposicion({ productos, stockMap }) {
             </div>
             <div className="details">
               <span>Stock {producto.stock}</span>
-              <span>Real {producto.stockObjetivo}</span>
+              <span>Objetivo {producto.stockObjetivo}</span>
               <span>Pedir {producto.falta}</span>
               <span>{money(producto.falta * Number(producto.precioNeto || 0))}</span>
             </div>
